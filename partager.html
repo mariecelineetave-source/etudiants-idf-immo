@@ -386,20 +386,34 @@ textarea{min-height:92px;resize:vertical;line-height:1.5}
       method:"POST", headers:{ "Accept":"application/json" }, body:d
     })
     .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(function(){
+    .then(function(rep){
+      // Le service peut répondre 200 en refusant l'envoi — un formulaire non
+      // activé, par exemple. Sans ce contrôle, l'écran de confirmation
+      // s'afficherait alors que rien n'est parti.
+      if (!rep || (rep.success !== "true" && rep.success !== true)) {
+        var refus = new Error((rep && rep.message) ? rep.message : "le service d'envoi a refusé l'envoi");
+        refus.refusDuService = true;
+        throw refus;
+      }
       $("opp").style.display = "none";
       document.querySelector(".hero").style.display = "none";
       $("ref").textContent = ref;
       $("fin").classList.add("on");
       window.scrollTo(0,0);
     })
-    .catch(function(){
+    .catch(function(e){
       b.disabled = false; b.textContent = "Partager cette opportunité";
       var m = $("echec");
+      // Dire ce qui s'est réellement passé : un refus du service d'envoi et une
+      // panne de réseau ne se corrigent pas de la même façon.
+      var detail = (e && e.refusDuService)
+        ? "Le service d'envoi a répondu : " + e.message
+        : "La connexion au service d'envoi n'a pas abouti.";
       m.innerHTML = "<strong>L'envoi n'a pas fonctionné.</strong> Rien n'est perdu : " +
         "réessaie dans un instant, ou appelle Marie-Céline au " +
         '<a href="tel:+33660989292">06 60 98 92 92</a>. Elle enregistrera ton opportunité avec toi, ' +
-        "et la date de ton appel comptera de la même façon.";
+        "et la date de ton appel comptera de la même façon." +
+        '<span style="display:block;margin-top:8px;font-size:.85rem;opacity:.85">' + detail + "</span>";
       m.classList.add("on");
       m.scrollIntoView({behavior:"smooth", block:"center"});
     });
