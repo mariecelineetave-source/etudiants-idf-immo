@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nous en parler — paroisses.idf.immo</title>
+<meta name="description" content="Un projet immobilier en Île-de-France, ou quelqu'un à recommander. Quelques lignes suffisent : nous rappelons, et 10 % de nos honoraires nets reviennent à la paroisse que vous désignez.">
+<link rel="canonical" href="https://paroisses.idf.immo/nous-en-parler.html">
+<meta name="theme-color" content="#10233D">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="paroisses.idf.immo">
+<meta property="og:title" content="Nous en parler">
+<meta property="og:description" content="Un projet immobilier, ou quelqu'un à recommander. Quelques lignes suffisent.">
+<meta property="og:url" content="https://paroisses.idf.immo/nous-en-parler.html">
+<meta property="og:locale" content="fr_FR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .volet{display:none}
+  .volet.on{display:block}
+  .groupe{border:0;margin:0 0 34px}
+  .groupe legend{
+    font-size:.74rem;font-weight:600;letter-spacing:.17em;text-transform:uppercase;
+    color:var(--vitrail-fonce);padding:0;margin-bottom:6px;
+  }
+  .groupe .intro{color:var(--ardoise);font-size:.95rem;margin-bottom:20px;max-width:62ch}
+  .deux{display:grid;gap:18px}
+  @media (min-width:640px){.deux{grid-template-columns:1fr 1fr}}
+  .obligatoire{color:var(--vitrail-fonce)}
+  .champ.erreur input,.champ.erreur textarea{border-color:#B4472B;box-shadow:0 0 0 3px rgba(180,71,43,.14)}
+  .champ .dit-erreur{display:none;color:#8A3520;font-size:.87rem;font-weight:500}
+  .champ.erreur .dit-erreur{display:block}
+  .confirmation{display:none}
+  .confirmation.on{display:block}
+  .sceau{
+    display:inline-flex;align-items:center;gap:12px;
+    background:linear-gradient(165deg,#FFFDF7,#F8F1E3);border:1.5px solid var(--or-clair);
+    border-radius:8px;padding:14px 20px;margin:22px 0;
+  }
+  .sceau .ref{font-family:"EB Garamond",Garamond,Georgia,serif;font-size:1.35rem;color:var(--or);letter-spacing:.04em}
+  .sceau .quand{font-size:.86rem;color:var(--ardoise)}
+</style>
+</head>
+<body>
+<a class="saut" href="#principal">Aller au contenu</a>
+
+<header class="entete">
+  <div class="conteneur">
+    <a class="logo" href="index.html">paroisses<span class="pt">.</span>idf<span class="pt">.</span>immo</a>
+    <nav class="nav-p" aria-label="Navigation principale">
+      <a href="comment-ca-marche.html">Comment cela fonctionne</a>
+      <a href="le-reversement.html">Le reversement</a>
+      <a href="votre-paroisse.html">Votre paroisse</a>
+      <a href="vos-questions.html">Vos questions</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="bouton bouton-2" href="tel:+33660989292">06 60 98 92 92</a>
+  </div>
+</header>
+
+<main id="principal">
+
+  <section class="page-tete">
+    <div class="conteneur">
+      <h1>Nous en parler</h1>
+      <p>Quelques lignes suffisent. Nous rappelons sous vingt-quatre heures, en semaine comme le samedi, et nous ne rappelons pas deux fois.</p>
+    </div>
+  </section>
+
+  <section class="contenu">
+    <div class="conteneur etroit">
+
+      <!-- ====================== LE FORMULAIRE ====================== -->
+      <form id="formulaire" action="https://formsubmit.co/contact@idf.immo" method="POST" novalidate>
+
+        <fieldset class="groupe">
+          <legend>Votre situation</legend>
+          <p class="intro">Selon votre réponse, nous ne vous demandons pas les mêmes choses.</p>
+          <div class="choix">
+            <label>
+              <input type="radio" name="situation" value="projet" checked>
+              <span>
+                <span class="titre">Le projet est le mien</span>
+                <span class="det">Vendre, acheter ou faire estimer un bien.</span>
+              </span>
+            </label>
+            <label>
+              <input type="radio" name="situation" value="recommandation">
+              <span>
+                <span class="titre">Je recommande quelqu'un</span>
+                <span class="det">Une personne de mon entourage a un projet.</span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="groupe">
+          <legend>Vous</legend>
+          <div class="forme">
+            <div class="deux">
+              <div class="champ" id="c-nom">
+                <label for="nom">Nom et prénom <span class="obligatoire">*</span></label>
+                <input type="text" id="nom" name="nom" autocomplete="name">
+                <span class="dit-erreur">Merci d'indiquer votre nom.</span>
+              </div>
+              <div class="champ" id="c-tel">
+                <label for="tel">Téléphone <span class="obligatoire">*</span></label>
+                <input type="tel" id="tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="06 12 34 56 78">
+                <span class="dit-erreur">Un numéro à dix chiffres, pour vous rappeler.</span>
+              </div>
+            </div>
+            <div class="champ" id="c-courriel">
+              <label for="courriel">Courriel <span class="obligatoire">*</span>
+                <span class="aide">— c'est là que part votre accusé de réception.</span>
+              </label>
+              <input type="email" id="courriel" name="courriel" autocomplete="email">
+              <span class="dit-erreur">Une adresse valide, pour l'accusé de réception.</span>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="groupe">
+          <legend>La paroisse</legend>
+          <p class="intro">Celle que vous souhaitez voir bénéficier du reversement. Elle n'a pas besoin d'être la vôtre, mais elle doit être en Île-de-France. Si vous préférez ne pas en désigner, laissez ces cases vides&nbsp;: votre projet sera traité exactement de la même façon.</p>
+          <div class="forme">
+            <div class="deux">
+              <div class="champ">
+                <label for="paroisse">Nom de la paroisse</label>
+                <input type="text" id="paroisse" name="paroisse" placeholder="Saint-…">
+              </div>
+              <div class="champ">
+                <label for="paroisse-commune">Commune</label>
+                <input type="text" id="paroisse-commune" name="paroisse-commune" placeholder="Ville et code postal">
+              </div>
+            </div>
+            <div class="champ">
+              <label class="consentement">
+                <input type="checkbox" id="citer" name="citer">
+                <span>La paroisse peut savoir que le versement vient de moi. <span class="aide">Sans cette case, elle reçoit un virement anonyme&nbsp;: ni votre nom, ni l'adresse du bien, ni le prix.</span></span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- ---------- volet : le projet est le mien ---------- -->
+        <div class="volet on" id="volet-projet">
+          <fieldset class="groupe">
+            <legend>Votre projet</legend>
+            <div class="forme">
+              <div class="champ">
+                <label for="nature">De quoi s'agit-il&nbsp;?</label>
+                <select id="nature" name="nature">
+                  <option value="Vendre un bien">Vendre un bien</option>
+                  <option value="Acheter un bien">Acheter un bien</option>
+                  <option value="Faire estimer un bien">Faire estimer un bien</option>
+                  <option value="Une expertise en valeur vénale">Une expertise en valeur vénale</option>
+                  <option value="Je ne sais pas encore">Je ne sais pas encore</option>
+                </select>
+              </div>
+              <div class="deux">
+                <div class="champ">
+                  <label for="commune">Commune du bien</label>
+                  <input type="text" id="commune" name="commune" placeholder="Ville et code postal">
+                </div>
+                <div class="champ">
+                  <label for="echeance">Échéance envisagée</label>
+                  <select id="echeance" name="echeance">
+                    <option value="Dans les trois mois">Dans les trois mois</option>
+                    <option value="Cette année">Cette année</option>
+                    <option value="Dans un an ou plus">Dans un an ou plus</option>
+                    <option value="Simple réflexion">Simple réflexion, rien de décidé</option>
+                  </select>
+                </div>
+              </div>
+              <div class="champ">
+                <label for="precisions">Ce qu'il est utile de savoir <span class="aide">— facultatif</span></label>
+                <textarea id="precisions" name="precisions" placeholder="Le type de bien, sa surface, la raison du projet, une contrainte de calendrier, une succession en cours…"></textarea>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- ---------- volet : je recommande quelqu'un ---------- -->
+        <div class="volet" id="volet-recommandation">
+          <fieldset class="groupe">
+            <legend>La personne dont vous parlez</legend>
+            <p class="intro">Nous n'appelons jamais quelqu'un qui ignore que son numéro nous a été donné. Si vous n'avez pas encore eu cette conversation, il est plus simple de lui remettre nos coordonnées et de la laisser nous appeler.</p>
+            <div class="forme">
+              <div class="deux">
+                <div class="champ" id="c-r-nom">
+                  <label for="r-nom">Son nom <span class="obligatoire">*</span></label>
+                  <input type="text" id="r-nom" name="r-nom">
+                  <span class="dit-erreur">Merci d'indiquer son nom.</span>
+                </div>
+                <div class="champ" id="c-r-contact">
+                  <label for="r-contact">Son téléphone ou son courriel <span class="obligatoire">*</span></label>
+                  <input type="text" id="r-contact" name="r-contact">
+                  <span class="dit-erreur">Un moyen de la joindre.</span>
+                </div>
+              </div>
+              <div class="champ">
+                <label for="r-commune">Commune du bien</label>
+                <input type="text" id="r-commune" name="r-commune" placeholder="Ville et code postal">
+              </div>
+              <div class="champ">
+                <label for="r-precisions">Ce que vous savez <span class="aide">— facultatif</span></label>
+                <textarea id="r-precisions" name="r-precisions" placeholder="Où en est son projet, ce qui la retient, le moment où il vaut mieux l'appeler…"></textarea>
+              </div>
+              <div class="champ" id="c-accord">
+                <label class="consentement">
+                  <input type="checkbox" id="accord" name="accord">
+                  <span>J'ai prévenu cette personne et elle est d'accord pour être contactée. <span class="obligatoire">*</span></span>
+                </label>
+                <span class="dit-erreur">Sans son accord, nous ne l'appellerons pas. C'est la seule règle sur laquelle nous ne transigeons pas.</span>
+              </div>
+              <div class="champ">
+                <label class="consentement">
+                  <input type="checkbox" id="me-citer" name="me-citer" checked>
+                  <span>Vous pouvez lui dire que je vous ai donné son nom. <span class="aide">Décochez si vous préférez que nous ne vous citions pas&nbsp;; nous dirons alors seulement que l'information nous vient d'un proche.</span></span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <fieldset class="groupe">
+          <legend>Avant d'envoyer</legend>
+          <div class="forme">
+            <div class="champ" id="c-rgpd">
+              <label class="consentement">
+                <input type="checkbox" id="rgpd" name="rgpd">
+                <span>J'accepte que ces informations soient utilisées pour me recontacter. <span class="obligatoire">*</span> <span class="aide">Elles ne sont ni cédées, ni revendues, ni communiquées à la paroisse — voir les <a href="mentions-legales.html">mentions légales</a>.</span></span>
+              </label>
+              <span class="dit-erreur">Nous avons besoin de votre accord pour vous rappeler.</span>
+            </div>
+
+            <div class="message-forme non" id="echec" role="alert">
+              <strong>L'envoi n'a pas abouti.</strong>
+              <span id="echec-detail"></span>
+              Votre saisie est intacte&nbsp;: réessayez, ou appelez le <a href="tel:+33660989292">06 60 98 92 92</a>.
+            </div>
+
+            <div>
+              <button type="submit" class="bouton bouton-1" id="envoyer">Envoyer</button>
+            </div>
+            <p style="color:var(--ardoise);font-size:.9rem">Vous préférez la voix&nbsp;? <a href="tel:+33660989292">06 60 98 92 92</a> — appel ou SMS, y compris le samedi.</p>
+          </div>
+        </fieldset>
+
+      </form>
+
+      <!-- ====================== LA CONFIRMATION ====================== -->
+      <div class="confirmation" id="confirmation" tabindex="-1">
+        <h2>C'est envoyé.</h2>
+        <div class="sceau">
+          <span class="ref" id="code-ref"></span>
+          <span class="quand" id="date-ref"></span>
+        </div>
+        <p>Un accusé de réception vient de partir vers <strong id="adresse-confirmation"></strong>. Conservez-le&nbsp;: il porte la référence de votre demande et la date d'enregistrement.</p>
+        <p>Nous rappelons sous vingt-quatre heures. Si vous nous avez donné le nom d'une paroisse qui n'est pas encore liée par convention, nous lui écrivons d'abord&nbsp;: cela ne retarde en rien votre projet.</p>
+        <div class="actions">
+          <a class="bouton bouton-2" href="index.html">Revenir à l'accueil</a>
+          <a class="bouton bouton-2" href="comment-ca-marche.html">Lire la suite du déroulement</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="pied">
+  <div class="conteneur">
+    <div class="grille">
+      <div>
+        <div class="marque">paroisses<span class="pt">.</span>idf<span class="pt">.</span>immo</div>
+        <p>Accompagnement immobilier en Île-de-France. Un projet mené à son terme, 10 % des honoraires nets reversés à votre paroisse.</p>
+      </div>
+      <div>
+        <h2>Comprendre</h2>
+        <ul>
+          <li><a href="comment-ca-marche.html">Comment cela fonctionne</a></li>
+          <li><a href="le-reversement.html">Le reversement de 10 %</a></li>
+          <li><a href="votre-paroisse.html">Votre paroisse</a></li>
+          <li><a href="vos-questions.html">Vos questions</a></li>
+          <li><a href="notre-engagement.html">Notre engagement</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="tel:+33660989292">06 60 98 92 92</a></li>
+          <li><a href="sms:+33660989292">Envoyer un SMS</a></li>
+          <li><a href="mailto:contact@idf.immo">contact@idf.immo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Le cadre</h2>
+        <ul>
+          <li><a href="conditions-du-reversement.html">Conditions du reversement</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bas">
+      <span>Marie-Céline Etave — conseillère en immobilier, Île-de-France.</span>
+      <span>Un site de la famille idf.immo</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* paroisses.idf.immo — le formulaire.
+   Sans JavaScript, la page reste lisible et le formulaire part en POST
+   classique vers FormSubmit : les deux volets sont alors visibles, ce qui
+   est moins élégant mais parfaitement utilisable. */
+(function () {
+  "use strict";
+
+  var form  = document.getElementById("formulaire");
+  if (!form) return;
+
+  var volets = {
+    projet:         document.getElementById("volet-projet"),
+    recommandation: document.getElementById("volet-recommandation")
+  };
+  var echec   = document.getElementById("echec");
+  var envoyer = document.getElementById("envoyer");
+
+  function situation() {
+    var c = form.querySelector('input[name="situation"]:checked');
+    return c ? c.value : "projet";
+  }
+
+  function afficheVolet() {
+    var s = situation();
+    for (var cle in volets) {
+      if (volets[cle]) volets[cle].classList.toggle("on", cle === s);
+    }
+  }
+  Array.prototype.forEach.call(
+    form.querySelectorAll('input[name="situation"]'),
+    function (r) { r.addEventListener("change", afficheVolet); }
+  );
+  afficheVolet();
+
+  function v(id) {
+    var e = document.getElementById(id);
+    return e ? e.value.trim() : "";
+  }
+  function coche(id) {
+    var e = document.getElementById(id);
+    return !!(e && e.checked);
+  }
+  function marque(idChamp, enFaute) {
+    var e = document.getElementById(idChamp);
+    if (e) e.classList.toggle("erreur", enFaute);
+    return enFaute;
+  }
+
+  // Un numéro français : dix chiffres, quels que soient les espaces,
+  // ou un format international +33.
+  function telValide(t) {
+    var chiffres = t.replace(/[^0-9+]/g, "");
+    return /^0[1-9][0-9]{8}$/.test(chiffres) || /^\+[0-9]{9,14}$/.test(chiffres);
+  }
+  function courrielValide(c) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(c);
+  }
+
+  function valide() {
+    var fautes = [];
+    if (marque("c-nom", v("nom").length < 2)) fautes.push("c-nom");
+    if (marque("c-tel", !telValide(v("tel")))) fautes.push("c-tel");
+    if (marque("c-courriel", !courrielValide(v("courriel")))) fautes.push("c-courriel");
+    if (marque("c-rgpd", !coche("rgpd"))) fautes.push("c-rgpd");
+
+    if (situation() === "recommandation") {
+      if (marque("c-r-nom", v("r-nom").length < 2)) fautes.push("c-r-nom");
+      if (marque("c-r-contact", v("r-contact").length < 5)) fautes.push("c-r-contact");
+      if (marque("c-accord", !coche("accord"))) fautes.push("c-accord");
+    } else {
+      marque("c-r-nom", false); marque("c-r-contact", false); marque("c-accord", false);
+    }
+    return fautes;
+  }
+
+  function reference() {
+    var d = new Date();
+    var deux = function (n) { return (n < 10 ? "0" : "") + n; };
+    var lettres = "ABCDEFGHJKLMNPQRSTUVWXYZ";
+    var suffixe = "";
+    for (var i = 0; i < 3; i++) {
+      suffixe += lettres.charAt(Math.floor(Math.random() * lettres.length));
+    }
+    return "P" + String(d.getFullYear()).slice(2) + deux(d.getMonth() + 1) + deux(d.getDate()) + "-" + suffixe;
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    echec.classList.remove("visible");
+
+    var fautes = valide();
+    if (fautes.length) {
+      var premier = document.getElementById(fautes[0]);
+      if (premier) {
+        premier.scrollIntoView({ block: "center", behavior: "smooth" });
+        var saisie = premier.querySelector("input, textarea, select");
+        if (saisie) saisie.focus({ preventScroll: true });
+      }
+      return;
+    }
+
+    var ref   = reference();
+    var quand = new Date().toLocaleDateString("fr-FR", {
+      day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit"
+    });
+    var recommande = situation() === "recommandation";
+    var paroisse = v("paroisse") ? v("paroisse") + (v("paroisse-commune") ? " (" + v("paroisse-commune") + ")" : "")
+                                 : "Aucune paroisse désignée";
+
+    var confirmation =
+      "Bonjour,\n\n" +
+      "Votre demande a bien été enregistrée sous la référence " + ref + ", le " + quand + ".\n\n" +
+      "Paroisse désignée : " + paroisse + "\n\n" +
+      (recommande
+        ? "Vous nous avez transmis les coordonnées d'une personne de votre entourage, en nous confirmant son accord. Nous l'appellerons une fois, en indiquant d'où vient l'information" + (coche("me-citer") ? " et de votre part." : ", sans vous citer.") + " Si elle ne donne pas suite, elle ne sera pas rappelée.\n\n"
+        : "Nous vous rappelons sous vingt-quatre heures pour convenir d'un rendez-vous. Il est gratuit et ne vous engage à rien.\n\n") +
+      "Pour mémoire : le reversement de 10 % des honoraires nets n'intervient qu'à la signature de l'acte authentique. Rien n'est dû avant, ni par vous, ni par la paroisse.\n\n" +
+      "Conservez ce message : il porte la référence de votre demande.\n\n" +
+      "Une question ? 06 60 98 92 92 ou contact@idf.immo\n\n" +
+      "Marie-Céline Etave\n" +
+      "paroisses.idf.immo";
+
+    var d = new FormData();
+    d.append("_subject", (recommande ? "Recommandation " : "Projet ") + ref + " — " + (v("paroisse") || "sans paroisse"));
+    d.append("_template", "table");
+    d.append("_captcha", "false");
+    d.append("_autoresponse", confirmation);
+    d.append("email", v("courriel"));      // destinataire de l'accusé de réception
+    d.append("Référence", ref);
+    d.append("Enregistrée le", quand);
+    d.append("Situation", recommande ? "Recommande quelqu'un" : "Projet personnel");
+    d.append("Nom", v("nom"));
+    d.append("Téléphone", v("tel"));
+    d.append("Courriel", v("courriel"));
+    d.append("Paroisse désignée", paroisse);
+    d.append("La paroisse peut connaître le nom", coche("citer") ? "OUI — le donateur accepte d'être cité" : "NON — versement anonyme");
+
+    if (recommande) {
+      d.append("Personne — nom", v("r-nom"));
+      d.append("Personne — contact", v("r-contact"));
+      d.append("Personne — commune du bien", v("r-commune") || "—");
+      d.append("Ce que sait la personne qui recommande", v("r-precisions") || "—");
+      d.append("Accord de la personne", "Attesté par celui qui recommande");
+      d.append("Puis-je citer celui qui recommande", coche("me-citer") ? "OUI" : "NON — ne pas le citer");
+    } else {
+      d.append("Nature du projet", v("nature"));
+      d.append("Commune du bien", v("commune") || "—");
+      d.append("Échéance", v("echeance"));
+      d.append("Précisions", v("precisions") || "—");
+    }
+
+    envoyer.disabled = true;
+    var texteInitial = envoyer.textContent;
+    envoyer.textContent = "Envoi en cours…";
+
+    fetch("https://formsubmit.co/ajax/contact@idf.immo", {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: d
+    })
+    .then(function (r) { return r.json(); })
+    .then(function (rep) {
+      if (!rep || (rep.success !== "true" && rep.success !== true)) {
+        var refus = new Error((rep && rep.message) ? rep.message : "le service d'envoi a refusé l'envoi");
+        refus.refusDuService = true;
+        throw refus;
+      }
+      document.getElementById("code-ref").textContent = ref;
+      document.getElementById("date-ref").textContent = "Enregistrée le " + quand;
+      document.getElementById("adresse-confirmation").textContent = v("courriel");
+      form.style.display = "none";
+      var conf = document.getElementById("confirmation");
+      conf.classList.add("on");
+      conf.focus({ preventScroll: true });
+      conf.scrollIntoView({ block: "start", behavior: "smooth" });
+    })
+    .catch(function (err) {
+      // On ne vide surtout rien : la saisie doit rester récupérable.
+      envoyer.disabled = false;
+      envoyer.textContent = texteInitial;
+      // Dire ce qui s'est réellement passé : un refus du service d'envoi et
+      // une panne de réseau ne se corrigent pas de la même façon.
+      var detail = document.getElementById("echec-detail");
+      if (detail) {
+        detail.textContent = (err && err.refusDuService)
+          ? " Le service d'envoi a répondu : " + err.message + "."
+          : " La connexion au service d'envoi n'a pas abouti.";
+      }
+      echec.classList.add("visible");
+      echec.scrollIntoView({ block: "center", behavior: "smooth" });
+    });
+  });
+})();
+</script>
+</body>
+</html>
