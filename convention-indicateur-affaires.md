@@ -42,7 +42,7 @@ ci-après dénommé **« l'Indicateur »**,
 
 ## Article 1 — Objet
 
-L'Indicateur signale au Mandataire, **par téléphone**, l'identité de personnes de son
+L'Indicateur signale au Mandataire, **par le formulaire en ligne du site ou par téléphone**, l'identité de personnes de son
 entourage envisageant de vendre un bien immobilier situé en Île-de-France. Il communique à
 cette occasion le prénom, la commune, la nature du bien et le numéro de téléphone de la
 personne concernée.
