@@ -2,10 +2,10 @@
 
 Site de **proposition aux paroisses d'Île-de-France** et à leurs paroissiens.
 Un paroissien confie un projet immobilier, ou recommande Marie-Céline Etave à
-quelqu'un&nbsp;; si l'opération aboutit, **10 % des honoraires nets** sont reversés à
+quelqu'un ; si l'opération aboutit, **10 % des honoraires nets** sont reversés à
 la paroisse désignée. **Le paroissien ne perçoit jamais rien.**
 
-Public visé, explicitement demandé par Marie-Céline&nbsp;: **cadres et cadres
+Public visé, explicitement demandé par Marie-Céline : **cadres et cadres
 supérieurs catholiques**. Cela commande tout le reste — le ton, la typographie,
 l'absence de simulateur, et la franchise sur le conflit d'intérêts.
 
@@ -17,22 +17,22 @@ Ce n'est pas sa place définitive.
 
 GitHub Pages n'acceptant **qu'un domaine par dépôt**, ce site doit être publié
 depuis son propre dépôt `mariecelineetave-source/paroisses-idf-immo`, à la
-racine, avec le `CNAME` fourni. Restent à faire, dans cet ordre&nbsp;:
+racine, avec le `CNAME` fourni. Restent à faire, dans cet ordre :
 
 1. Créer le dépôt public `paroisses-idf-immo` et y copier le contenu de ce
    dossier **à la racine**.
-2. Chez Gandi&nbsp;: enregistrement **CNAME** `paroisses` →
+2. Chez Gandi : enregistrement **CNAME** `paroisses` →
    `mariecelineetave-source.github.io.`
-3. GitHub → Settings → Pages&nbsp;: branche `main`, racine, puis cocher
+3. GitHub → Settings → Pages : branche `main`, racine, puis cocher
    **Enforce HTTPS**.
 4. **Activer FormSubmit pour ce site** (voir plus bas) — sans quoi le
    formulaire n'envoie rien.
 5. Raccorder l'espace personnel au socle `app.idf.immo` **si et seulement si**
-   Marie-Céline le demande&nbsp;: voir « Ce qui n'a pas été fait ».
+   Marie-Céline le demande : voir « Ce qui n'a pas été fait ».
 
 ## La famille `idf.immo`
 
-Les réseaux de prescripteurs et leur socle, et rien d'autre&nbsp;:
+Les réseaux de prescripteurs et leur socle, et rien d'autre :
 
 | Domaine | Rôle |
 |---|---|
@@ -47,7 +47,7 @@ Les réseaux de prescripteurs et leur socle, et rien d'autre&nbsp;:
 **`antony.immo`, `paris7e.immo` et `cse.immo` n'en font PAS partie** (arbitrage
 du 21 août 2026). Ne jamais les réintroduire dans cette liste.
 
-**Chaque site reste autonome&nbsp;: ne jamais mélanger les contenus, ne jamais
+**Chaque site reste autonome : ne jamais mélanger les contenus, ne jamais
 modifier un autre dépôt depuis celui-ci, et ne jamais copier un texte d'un site
 à l'autre.** Les publics n'ont pas les mêmes craintes.
 
@@ -59,15 +59,15 @@ modifier un autre dépôt depuis celui-ci, et ne jamais copier un texte d'un sit
 | **Reversement de 10 % des honoraires nets** | associations, **paroisses** | l'organisme, jamais la personne |
 
 Ne jamais confondre les deux. Sur ce site, **le mot « prime » ne doit désigner
-que ce que le site ne fait pas**&nbsp;: le paroissien ne touche rien, et c'est
+que ce que le site ne fait pas** : le paroissien ne touche rien, et c'est
 précisément ce qui le tient hors du statut d'apporteur d'affaires rémunéré.
 
 ## Les règles du dispositif
 
 Écrites en dur dans les pages. **Ne jamais les modifier sans validation
-explicite de Marie-Céline** — et si l'une change, la changer partout&nbsp;:
-`index.html`, `comment-ca-marche.html`, `le-reversement.html`,
-`votre-paroisse.html`, `vos-questions.html`, `conditions-du-reversement.html`
+explicite de Marie-Céline** — et si l'une change, la changer partout :
+`index.html`, `comment-cela-se-passe.html`, `le-reversement.html`,
+`votre-paroisse.html`, `questions.html`, `conditions-du-reversement.html`
 et le texte de confirmation de `nous-en-parler.html`.
 
 | Règle | Valeur |
@@ -84,7 +84,7 @@ et le texte de confirmation de `nous-en-parler.html`.
 | Zone | **Île-de-France uniquement** (75, 77, 78, 91, 92, 93, 94, 95) |
 
 **L'assiette est le point où une première version se trompe toujours.** Elle a
-déjà dû être corrigée sur `associations.idf.immo`&nbsp;: le reversement porte sur ce
+déjà dû être corrigée sur `associations.idf.immo` : le reversement porte sur ce
 que Marie-Céline perçoit réellement, **pas** sur les honoraires d'agence bruts
 facturés au client. L'écart est d'environ un quart. Ne jamais « simplifier » ce
 point.
@@ -101,113 +101,175 @@ de la quote-part.
 
 ## Le vocabulaire — règles absolues
 
-Communes à la famille&nbsp;:
+Communes à la famille :
 
 - **Le mot « signalement » ne doit apparaître nulle part** — ni dans les textes,
   ni dans les URLs, ni dans les `alt`, ni dans les noms de classes.
 - **Ne pas écrire « minimum » ni « sans minimum »** dans le texte visible.
 
-Propres à ce site&nbsp;:
+Propres à ce site :
 
 - On dit **« reversement »**, jamais « prime », « commission », « rétrocession »
   ni « don » pour désigner les 10 %.
 - On dit **« la paroisse »** et **« le paroissien »**. On ne dit pas « le
   fidèle », ni « la communauté », ni « l'ouaille ».
-- On écrit **« l'entité désignée par la paroisse »** dès qu'il s'agit d'argent&nbsp;:
+- On écrit **« l'entité désignée par la paroisse »** dès qu'il s'agit d'argent :
   une paroisse n'a pas la personnalité juridique, et l'écrire prouve qu'on sait
   de quoi on parle.
 - **Ne jamais laisser entendre un agrément diocésain.** Une convention avec une
   paroisse n'est pas un agrément. C'est écrit noir sur blanc dans
-  `votre-paroisse.html`, `vos-questions.html#diocese` et les mentions légales&nbsp;:
+  `votre-paroisse.html`, `vos-questions.html#diocese` et les mentions légales :
   ne pas l'affaiblir.
 - **La foi n'est jamais un argument de vente.** Pas de citation d'Évangile
   détournée en accroche, pas d'image pieuse en bandeau, pas d'appel à la
   générosité déguisé en offre commerciale. C'est l'engagement n° 5.
 
-## Le ton — la demande explicite était « très, très subtil »
+## Le ton — « beaucoup, beaucoup plus fin »
 
-Ce qui tient le site debout, dans l'ordre&nbsp;:
+La première rédaction a elle aussi été refusée : « trop grossier ».
+Ce qui pèche dans ce registre-là : les phrases à effet, les questions
+rhétoriques en accroche, les listes à coches, les impératifs pressants, et
+l'argent annoncé d'emblée en gros.
 
-1. **L'intérêt est avoué.** `vos-questions.html#interet` répond « Si. Et nous
-   préférons le dire nous-mêmes » à la question de l'instrumentalisation de la
-   paroisse. **Ne jamais adoucir ce passage&nbsp;: c'est le plus persuasif du site
-   pour ce public.**
-2. **La discrétion prime sur l'argument.** La paroisse reçoit un virement, pas
-   un dossier. « Un curé n'a pas à savoir ce que vaut l'appartement de ses
-   paroissiens » — cette phrase reste.
-3. **Le droit de dire non est offert d'avance.** « Si votre curé préfère ne pas
-   s'associer à cette démarche, la réponse est simplement non, et il n'y a rien
-   à ajouter. » Ne pas la retirer pour « ne pas décourager ».
-4. **La liste de ce qu'on ne demandera jamais** (`votre-paroisse.html`) —
-   annonce en chaire, stand sur le parvis, prospectus, fichier de paroissiens,
-   exclusivité — vaut mieux que n'importe quelle promesse.
-5. Phrases construites, pas de point d'exclamation, pas d'emoji, pas
-   d'impératif pressant, pas de compte à rebours. Le vouvoiement partout.
+Ce qui tient le site debout, dans l'ordre :
 
-## Palette, typographie et dessins
+1. **L'intérêt est avoué, sans forfanterie.** « Nous avons évidemment
+   intérêt à ce que l'on pense à nous. Il nous a paru plus honnête de l'écrire
+   que de le laisser deviner. » **Ne jamais adoucir ce passage, et ne jamais
+   le durcir non plus** : la version « Si. Et nous préférons le dire
+   nous-mêmes » avait été jugée trop cavalière.
+2. **La discrétion passe avant l'argument.** La paroisse reçoit un virement, non
+   un dossier. La formule « un curé n'a pas à savoir ce que vaut
+   l'appartement de ses paroissiens » a été retirée : juste sur le fond,
+   familière sur la forme.
+3. **Le droit de refuser est donné d'avance**, au curé comme au conseil
+   économique.
+4. **La liste de ce que nous ne demanderons jamais** (`votre-paroisse.html`)
+   vaut mieux que n'importe quelle promesse.
 
-Le **bleu de la famille `.immo`**, posé sur une **pierre calcaire** au lieu du
-bleu pâle des autres sites. Tout est dans `styles.css`, en variables.
+Règles d'écriture :
 
-- Fonds&nbsp;: `--pierre:#F2EFE9`, `--craie:#FBFAF7`, `--parvis:#E7E2D8`
-- Bleus&nbsp;: `--voute:#1C4E80`, `--nuit:#10233D`, `--vitrail:#1E6FB8`,
-  `--vitrail-fonce:#155A96`, `--ciel:#9CC8EE`
-- Textes&nbsp;: `--encre:#16212E`, `--ardoise:#54626F`
-- **Or&nbsp;: `--or:#7F6129` (fond clair), `--or-clair:#D0AE6E` (fond sombre) —
-  réservé au seul reversement de 10 %.** Jamais ailleurs.
+- L'argent arrive **tard et une seule fois** sur l'accueil. Le titre ne parle
+  pas de pourcentage.
+- Phrases construites, subordonnées admises, aucun point d'exclamation, aucun
+  emoji, aucun compte à rebours. Vouvoiement partout.
+- Ne jamais dire au lecteur ce qu'il pense ou ce qu'il ressent.
+- Employer le vocabulaire du milieu avec justesse et sans le surjouer :
+  *conseil économique*, *économat diocésain*, *feuille paroissiale*, *denier*,
+  *casuel*. Trop en mettre trahit celui qui récite.
+- Ne jamais appeler le paroissien « client ».
 
-**Contrastes vérifiés le 26 août 2026** (script `contraste.py`, WCAG AA)&nbsp;: toutes
-les paires en usage sont ≥ 4,5. Particularité de ce site&nbsp;: `--or` a été
-volontairement assombri à `#7F6129` pour atteindre **5,02 sur `--pierre`** — il
-passe donc **aussi en texte sur fond clair**, contrairement aux sites voisins où
-l'or est plus clair. Ne pas le « réaligner » sur les autres sites sans
-revérifier les contrastes.
+## Le dessin — refait le 27 août 2026
 
-**Typographie&nbsp;: EB Garamond aux titres, Archivo au texte courant.** La
-famille utilise Fraunces&nbsp;; le garamond a été choisi ici parce que c'est la
-lettre des livres qu'a lus ce public. Archivo maintient la parenté.
+La première version a été refusée par Marie-Céline : « très cheap ».
+Elle avait raison — c'était une page d'atterrissage (héros sombre, cartes à
+ombre portée, dégradés, boutons en gélule, rosace vectorielle) et non un objet
+destiné à des gens qui lisent. **Ne pas y revenir.**
 
-**Aucune image externe. Tout est en SVG inline**, avec les variables de couleur,
-donc un changement de palette suffit à faire suivre les dessins. Trois motifs&nbsp;:
+Le parti pris est désormais celui d'une **page imprimée**. Trois interdits, qui
+expliquent presque tout le reste :
 
-- **La rosace** (`index.html`, classe `.rosace`) — douze lancettes, **une seule
-  éclairée en or**&nbsp;: la part qui revient à la paroisse dans un ensemble qui la
-  dépasse. Géométrie produite par un script, pas à la main.
-- **L'église au milieu des immeubles** (`votre-paroisse.html`, classe
-  `.paysage`) — **une seule fenêtre allumée** dans un immeuble voisin&nbsp;: le bien
-  que quelqu'un s'apprête à vendre. La rosace de l'église lui répond dans le
-  même or. C'est le site entier en un dessin.
-- **Les arcs en plein cintre** des deux portes de l'accueil, et les jetons
-  d'étapes dont le haut est arrondi (`border-radius:16px 16px 4px 4px`).
+1. **Aucune carte à ombre portée.** Là où il faut grouper, on emploie des filets
+   (`--trait`) et du blanc, jamais une boîte.
+2. **Aucun dégradé**, nulle part.
+3. **Aucun bouton en gélule.** Rayon 2 px, un seul bouton plein par page.
 
-Le seul fichier image est `marie-celine-etave.jpg`, portrait publié
-volontairement par Marie-Céline sur les autres sites de la famille.
+### Palette
+
+| Rôle | Variable | Valeur |
+|---|---|---|
+| La page | `--papier` | `#F6F2EA` |
+| Bandes claires / creusées | `--papier-clair` / `--papier-sombre` | `#FBF9F4` / `#EDE7DB` |
+| Texte | `--encre` / `--encre-doux` | `#1A1D22` / `#4C525A` |
+| Filets | `--trait` / `--trait-fin` | `#DBD3C4` / `#E8E2D6` |
+| Le bleu de la famille | `--bleu` / `--bleu-clair` | `#1F3A5F` / `#A9BED6` |
+| **La part de la paroisse** | `--bronze` / `--bronze-clair` | `#7F6129` / `#C9A968` |
+
+**Le bronze ne désigne qu'une chose : les 10 % qui reviennent à la paroisse.**
+Jamais autre chose. Il a été assombri à `#7F6129` pour tenir 4,5 sur les trois
+tons de papier ; `#8A6A33` tombait à 4,49 et ne passait pas.
+`python3 outils/contraste.py` vérifie les seize paires en usage.
+
+### Typographie
+
+**EB Garamond aux titres et au texte courant**, 20 px, interligne 1,64, mesure
+64 caractères. Archivo n'intervient que pour les mentions en marge, les
+étiquettes et les boutons — en petites capitales espacées.
+
+La **ponctuation française est posée automatiquement** par `ponctue()` dans le
+générateur : fine insécable devant `;` `!` `?` et dans les guillemets,
+insécable devant `:` et `%`. C'est un détail que ce lectorat voit. La fonction
+ne touche jamais l'intérieur des balises ni des blocs `<script>`.
+
+### La grille
+
+Une seule structure de page : `.rubrique`, deux colonnes au-delà de 1000 px —
+une mention en marge (186 px), le texte à côté. Toutes les pages ont ainsi le
+**même bord gauche**, et les mentions servent de titres courants. La mise en
+rubriques est **automatique** : `enrubrique()` découpe les sections `.texte` aux
+`<h2>` et lit la mention dans `data-mention` du titre. Une page qui contient
+déjà des `.rubrique` écrites à la main est laissée telle quelle.
+
+### Les images
+
+**La photographie de l'église Saint-Saturnin d'Antony**, demandée explicitement
+par Marie-Céline. C'est celle qu'utilise déjà antony.immo :
+`92-Antony-place-St-Saturnin.jpg`, de **JC Allin**, Wikimedia Commons,
+**CC BY-SA 3.0**.
+
+- **L'attribution est obligatoire.** Elle figure sous chaque planche et en pied
+  de page. Ne jamais la retirer.
+- **Le partage à l'identique s'applique aux versions modifiées.** Nos tirages
+  recadrés et retraités sont donc eux-mêmes sous CC BY-SA 3.0, et les mentions
+  légales le disent. Ce n'est pas contagieux pour le reste du site.
+- **Traitement** : recadrage (l'enseigne de commerce et la signalétique de
+  voirie sortent du champ), puis bichromie — ombres à l'encre froide, hautes
+  lumières sur papier chaud, noir et blanc pondéré vers le bleu pour éclaircir
+  un ciel très saturé. `outils/planche-saint-saturnin.py` régénère les tirages.
+- Deux cadrages : `saint-saturnin-*.jpg` (la façade et le clocher, à l'accueil)
+  et `clocher-*.jpg` (le clocher seul, en marge de `votre-paroisse.html`).
+
+**Le seul ornement dessiné est le trilobe** du pignon de Saint-Saturnin : trois
+cercles tangents, en SVG, tracés sans remplissage. Il sert de fleuron entre les
+sections, de puce de liste et de favicon. Il n'y a **aucun autre dessin** — la
+rosace vectorielle et l'église au milieu des immeubles de la première version
+ont été supprimées.
 
 ## Structure
 
-- `index.html` — l'accueil. Objectif unique&nbsp;: « Nous en parler ». Sections
-  clés&nbsp;: les deux portes, le manifeste, le parcours en 4 temps, ce qui change /
-  ne change pas, **la discrétion**, **l'objection**.
-- `nous-en-parler.html` — le formulaire (deux volets&nbsp;: projet personnel /
-  recommandation), CSS et JS inclus. La page la plus importante.
-- `comment-ca-marche.html`, `le-reversement.html`, `votre-paroisse.html`,
-  `vos-questions.html`, `notre-engagement.html` — les pages de contenu.
+- `index.html` — l'accueil. Objectif unique : « Nous en parler ».
+  Sections clés : les deux situations, le déroulement, **la discrétion**, la
+  citation sur fond bleu, **la réserve**, l'interlocutrice, la zone.
+- `nous-en-parler.html` — le formulaire (deux volets : projet personnel /
+  recommandation), script inclus. **Marie-Céline a jugé cette page réussie dès
+  la première version : ne pas la remanier sans raison.**
+- `comment-cela-se-passe.html`, `le-reversement.html`, `votre-paroisse.html`,
+  `questions.html`, `nos-engagements.html` — les pages de contenu.
   `votre-paroisse.html` s'adresse au **curé, à l'économe et au conseil
-  économique**, pas au paroissien&nbsp;: ne pas mélanger les deux voix.
+  économique**, non au paroissien : ne pas mélanger les deux voix.
 - `conditions-du-reversement.html` — le règlement, 14 articles.
-- `mentions-legales.html` — éditeur, hébergeur, RGPD.
-- `contact.html` — téléphone, SMS, courriel.
-- `styles.css` — feuille commune. `site.js` — barre d'action mobile.
+- `mentions-legales.html` — éditeur, hébergeur, **licence des photographies**,
+  RGPD.
+- `contact.html` — téléphone, message, courriel.
+- `styles.css` — feuille commune. `site.js` — barre d'action sur petit écran
+  (retirée d'office sur la page du formulaire).
+- `images/` — les planches et le portrait. `outils/` — contrôles et
+  régénération des images, hors site.
 - `CNAME`, `robots.txt`, `sitemap.xml`.
 
-**Pas de pages par département** (leçon de `nounous.idf.immo`&nbsp;: 81 % de texte
+**Pas de pages par département** (leçon de `nounous.idf.immo` : 81 % de texte
 identique, pages satellites déclassées par Google). **Pas de multilingue.**
+
+Le site est produit par des scripts de génération conservés hors dépôt, dans le
+répertoire de travail de la session. **Les fichiers HTML du dépôt font foi** :
+en cas de reprise, éditer le HTML directement plutôt que de chercher à
+reconstituer les générateurs.
 
 ## Contact — règle stricte
 
 - **`contact@idf.immo` uniquement.** Jamais `contact@paroisses.idf.immo`, qui
   n'existe pas.
-- **Téléphone&nbsp;: 06 60 98 92 92.**
+- **Téléphone : 06 60 98 92 92.**
 
 ## Règles de contenu
 
@@ -220,11 +282,11 @@ identique, pages satellites déclassées par Google). **Pas de multilingue.**
    `votre-paroisse.html` renvoient à l'économat diocésain ou à l'expert-comptable
    et précisent que le reversement peut constituer une **ressource ordinaire** et
    non un don — donc sans reçu fiscal. C'est ce qui rend la proposition crédible
-   auprès d'un trésorier&nbsp;: ne pas le supprimer.
+   auprès d'un trésorier : ne pas le supprimer.
 4. **Aucune donnée personnelle dans le dépôt** — il est public. Pas un nom de
    paroisse réelle, pas une coordonnée, pas un nom de curé.
 5. **Ne jamais contacter qui que ce soit.**
-6. Avant tout commit&nbsp;: relancer `verif.py` (équilibre des balises via
+6. Avant tout commit : relancer `verif.py` (équilibre des balises via
    `html.parser`, liens internes, ancres, JSON-LD, mots interdits).
 7. Quand le contenu d'une page publiée change, mettre son `<lastmod>` dans
    `sitemap.xml` à la date du jour (AAAA-MM-JJ).
@@ -243,7 +305,7 @@ identique, pages satellites déclassées par Google). **Pas de multilingue.**
   **Ne jamais créer un second projet Supabase pour ce site.**
 - **Pas de convention de partenariat rédigée.** Le site l'annonce (« une
   page »). Le modèle `convention-indicateur-affaires.md` d'etudiants.idf.immo
-  n'est **pas** réutilisable tel quel&nbsp;: il rémunère un indicateur personne
+  n'est **pas** réutilisable tel quel : il rémunère un indicateur personne
   physique, ce que ce site exclut. Il faut une convention de reversement
   calquée sur celle d'`associations.idf.immo` (article 5.2, même assiette).
 
@@ -255,35 +317,35 @@ inventer en attendant.
 - **L'accord de BSK Immobilier** sur le principe du reversement à un tiers.
 - **L'entrée de `paroisses.idf.immo` dans la famille**, et la mise à jour des
   `CLAUDE.md` des sites voisins en conséquence.
-- **Relecture juridique**, en particulier sur deux points&nbsp;: la qualification du
+- **Relecture juridique**, en particulier sur deux points : la qualification du
   reversement pour l'entité bénéficiaire, et le fait que le paroissien ne
   perçoive rien (ce qui est précisément ce qui l'écarte du statut d'apporteur
   d'affaires soumis à convention et déclaration).
-- **Faut-il prévenir l'économat diocésain avant d'écrire aux paroisses&nbsp;?**
+- **Faut-il prévenir l'économat diocésain avant d'écrire aux paroisses ?**
   Le site suppose un contact paroisse par paroisse. Une démarche diocésaine
   préalable serait plus lente mais plus solide. Non tranché.
-- **Le tarif de l'expertise** pour les paroissiens&nbsp;: aucun prix n'est affiché.
+- **Le tarif de l'expertise** pour les paroissiens : aucun prix n'est affiché.
   Pour mémoire, 1 190 € sur antony.immo, 990 € pour un salarié de CSE
   partenaire. Ne rien afficher tant que ce n'est pas décidé.
 
 ## Le formulaire passe par FormSubmit — activation PAR SITE
 
 `nous-en-parler.html` envoie à `contact@idf.immo` via FormSubmit. Ce service
-exige une **activation à la première soumission de chaque site**&nbsp;: il envoie un
+exige une **activation à la première soumission de chaque site** : il envoie un
 courriel contenant un lien « Activate Form », et tant que personne n'a cliqué,
 **rien ne part**.
 
 **Ce site n'est pas encore activé** — il n'a jamais été mis en ligne. Le premier
-envoi de test échouera&nbsp;: c'est normal, c'est lui qui déclenche le courriel
+envoi de test échouera : c'est normal, c'est lui qui déclenche le courriel
 d'activation.
 
 FormSubmit est **injoignable depuis les sessions Claude** (le proxy réseau le
-bloque)&nbsp;: ce test ne peut être fait que depuis un vrai navigateur.
+bloque) : ce test ne peut être fait que depuis un vrai navigateur.
 
 ## Divers
 
 - Tout en français. Commits clairs en français.
-- Le proxy réseau bloque le fetch HTTP direct&nbsp;: un échec `curl` ne signifie PAS
+- Le proxy réseau bloque le fetch HTTP direct : un échec `curl` ne signifie PAS
   que le site est en panne.
-- Push&nbsp;: `git push -u origin <branche>`&nbsp;; en cas d'erreur réseau, retenter
+- Push : `git push -u origin <branche>` ; en cas d'erreur réseau, retenter
   jusqu'à 4 fois (2, 4, 8, 16 s).

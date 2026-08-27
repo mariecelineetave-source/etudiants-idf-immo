@@ -1,34 +1,64 @@
+# -*- coding: utf-8 -*-
+"""Contrôle des contrastes de la palette (WCAG AA : 4,5 pour le texte courant).
+
+    python3 outils/contraste.py
+"""
+
 def lin(c):
-    c = c/255
-    return c/12.92 if c <= 0.03928 else ((c+0.055)/1.055)**2.4
-def L(h):
-    h = h.lstrip('#')
-    r,g,b = int(h[0:2],16), int(h[2:4],16), int(h[4:6],16)
-    return 0.2126*lin(r)+0.7152*lin(g)+0.0722*lin(b)
-def ratio(a,b):
-    la, lb = L(a), L(b)
-    hi, lo = max(la,lb), min(la,lb)
-    return (hi+0.05)/(lo+0.05)
+    c = c / 255
+    return c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
 
-C = dict(pierre="#F2EFE9", craie="#FBFAF7", parvis="#E7E2D8", voute="#1C4E80",
-         nuit="#10233D", vitrail="#1E6FB8", vitrail_fonce="#155A96", ciel="#9CC8EE",
-         encre="#16212E", ardoise="#54626F", ligne="#DAD3C6", or_="#7F6129",
-         or_clair="#D0AE6E", chapo_sombre="#CBDCEE", pied="#AFC6DC")
 
-paires = [
- ("encre","pierre","texte courant"), ("encre","craie","texte sur carte"),
- ("encre","parvis","texte sur section douce"),
- ("ardoise","pierre","texte secondaire"), ("ardoise","craie","texte secondaire carte"),
- ("ardoise","parvis","texte secondaire douce"),
- ("vitrail_fonce","pierre","lien / surtitre"), ("vitrail_fonce","craie","lien sur carte"),
- ("vitrail_fonce","parvis","lien sur douce"),
- ("voute","pierre","titre bleu"), ("nuit","pierre","titre marine"),
- ("or_","pierre","OR en texte sur clair"), ("or_","craie","OR en texte sur carte"),
- ("or_clair","nuit","OR sur fond sombre"), ("ciel","nuit","accent clair sur sombre"),
- ("chapo_sombre","nuit","chapo sur sombre"), ("pied","nuit","pied de page"),
- ("craie","voute","texte blanc sur bouton"), ("craie","nuit","blanc sur marine"),
+def luminance(h):
+    h = h.lstrip("#")
+    return (0.2126 * lin(int(h[0:2], 16))
+            + 0.7152 * lin(int(h[2:4], 16))
+            + 0.0722 * lin(int(h[4:6], 16)))
+
+
+def rapport(a, b):
+    la, lb = luminance(a), luminance(b)
+    return (max(la, lb) + 0.05) / (min(la, lb) + 0.05)
+
+
+C = {
+    "papier": "#F6F2EA", "papier-clair": "#FBF9F4", "papier-sombre": "#EDE7DB",
+    "encre": "#1A1D22", "encre-doux": "#4C525A",
+    "trait": "#DBD3C4", "trait-fin": "#E8E2D6",
+    "bleu": "#1F3A5F", "bleu-clair": "#A9BED6",
+    "bronze": "#7F6129", "bronze-clair": "#C9A968",
+    "pied": "#B8C7D9", "pied-bas": "#9FB1C6", "sur-bleu": "#D3DEEB",
+}
+
+PAIRES = [
+    ("encre", "papier", "texte courant"),
+    ("encre", "papier-clair", "texte sur bande claire"),
+    ("encre", "papier-sombre", "texte sur bande creusée"),
+    ("encre-doux", "papier", "texte secondaire"),
+    ("encre-doux", "papier-clair", "texte secondaire, bande claire"),
+    ("encre-doux", "papier-sombre", "texte secondaire, bande creusée"),
+    ("bleu", "papier", "lien survolé, titres"),
+    ("bleu", "papier-clair", "lien sur bande claire"),
+    ("bronze", "papier", "la part de la paroisse"),
+    ("bronze", "papier-clair", "la part, sur bande claire"),
+    ("papier", "bleu", "texte du bouton"),
+    ("sur-bleu", "bleu", "texte sur fond bleu"),
+    ("bleu-clair", "bleu", "mention sur fond bleu"),
+    ("bronze-clair", "bleu", "la part, sur fond bleu"),
+    ("pied", "bleu", "pied de page"),
+    ("pied-bas", "bleu", "bas de pied de page"),
 ]
-for a,b,quoi in paires:
-    r = ratio(C[a],C[b])
-    etat = "OK  " if r>=4.5 else ("gd  " if r>=3 else "NON ")
-    print(f"{etat} {r:5.2f}  {quoi:34s} {a} sur {b}")
+
+if __name__ == "__main__":
+    bon = True
+    for a, b, quoi in PAIRES:
+        r = rapport(C[a], C[b])
+        if r >= 4.5:
+            etat = "OK  "
+        elif r >= 3:
+            etat = "gd  "          # accepté pour du grand texte seulement
+        else:
+            etat = "NON "
+            bon = False
+        print("%s %5.2f  %-34s %s sur %s" % (etat, r, quoi, a, b))
+    print("\n%s" % ("tous les contrastes tiennent" if bon else "UNE PAIRE NE TIENT PAS"))

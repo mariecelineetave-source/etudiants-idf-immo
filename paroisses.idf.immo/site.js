@@ -6,6 +6,14 @@
   var barre = document.getElementById("barre");
   if (!barre) return;
 
+  // Sur la page du formulaire, la barre proposerait d'aller là où l'on est
+  // déjà : on la retire.
+  if (document.getElementById("formulaire")) {
+    barre.remove();
+    document.body.classList.remove("a-barre");
+    return;
+  }
+
   function ajuste() {
     // On révèle la barre une fois le premier écran dépassé : avant,
     // le bouton du héros est déjà à portée de pouce.
