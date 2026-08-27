@@ -309,6 +309,38 @@ reconstituer les générateurs.
   physique, ce que ce site exclut. Il faut une convention de reversement
   calquée sur celle d'`associations.idf.immo` (article 5.2, même assiette).
 
+## Ce que rapporte la session pros.idf.immo — 27 août 2026
+
+Reçu par routine programmée, à la demande de Marie-Céline. **Ces faits n'ont pas
+été vérifiés depuis cette session** : les traiter comme un renseignement utile,
+non comme un acquis, et les contrôler avant de s'en servir.
+
+- **FormSubmit s'active par site, non par adresse.** Aucun des cinq formulaires
+  de la famille ne l'était avant le 22 août ; gardiens était muet depuis le 13.
+  Le premier envoi échoue toujours et déclenche le courriel « Activate Form ».
+  C'est une étape normale, pas une panne. (Déjà noté plus bas.)
+- **FormSubmit répond 200 en refusant un envoi.** `etudiants` et `associations`
+  affichaient donc une confirmation alors que rien ne partait ; corrigé le
+  22 août. **Contrôlé ici le 27 août : `nous-en-parler.html` vérifie bien
+  `rep.success` avant d'afficher le reçu (ligne 466) et affiche le message exact
+  du service en cas de refus (ligne 489).** Ne pas défaire ce contrôle.
+- **Pas de pages par département** — confirmé par leur suppression sur pros,
+  gardiens et nounous le 27 août. Il n'y en a aucune ici, et il ne faut pas en
+  créer.
+- **Brevo serait en place et le domaine `idf.immo` authentifié** (DKIM
+  brevo1/brevo2, DMARC, SPF Gandi intact) depuis le 22 août. Ne pas redemander à
+  Marie-Céline, et ne pas toucher au SPF : l'alignement se ferait par DKIM.
+- **Le socle `app.idf.immo` (projet `uiciolavnalimrjlpesx`) serait à jour**, avec
+  cinq réseaux actifs — gardiens, nounous, etudiants, associations, pros —
+  chacun doté de sa vue. Le réseau `paroisses` reste à ouvrir par un correctif
+  SQL, le jour où Marie-Céline demandera le raccordement.
+
+**Répartition proposée par cette session** : elle prendrait la mise en ligne et
+le raccordement, ce site gardant le contenu et le ton. **Arbitrage de
+Marie-Céline attendu.** Le point important est qu'une seule session à la fois
+touche au dépôt et au socle. Les sessions ne s'écrivent pas entre elles ici :
+toute réponse passe par elle.
+
 ## Points à confirmer avec Marie-Céline
 
 Volontairement absents du site tant qu'ils ne sont pas tranchés — ne rien
